@@ -1,10 +1,14 @@
 import pygame
+
+import pygame as pg 
 pygame.init()
 pygame.display.set_caption("Star Cat")
 screen = pygame.display.set_mode((1000, 700))
+janela = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
 
 mouse_x, mouse_y = 0,0
+tela_mapa = False
 
 # CARREGAMENTO DAS IMAGENS
 #menu
@@ -89,6 +93,7 @@ pata_azul = pygame.transform.scale(pata_azul, (211.5, 209))
 pata_vermelha = pygame.image.load('imagens/pata_vermelha_sem_fundo.png')
 pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
+
 
 while True:
   for event in pygame.event.get():
