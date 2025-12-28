@@ -1,5 +1,6 @@
 import pygame
 pygame.init()
+pygame.display.set_caption("Star Cat")
 screen = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
 
@@ -92,7 +93,7 @@ pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
-      pygame.quit()
+      pygame.quit()#tilia dfray ..ph
 
   pygame.display.flip() # Desenha o quadro atual na tela
   clock.tick(60)
