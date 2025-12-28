@@ -1,7 +1,7 @@
 import pygame
 import pygame as pg 
 pygame.init()
-pygame.display.set_caption("Star Cat")
+pygame.display.set_caption("Star Cat")#a
 janela = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
 
