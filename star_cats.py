@@ -1,9 +1,12 @@
 import pygame
+
+import pygame as pg 
 pygame.init()
-screen = pygame.display.set_mode((1000, 700))
+janela = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
 
 mouse_x, mouse_y = 0,0
+tela_mapa = False
 
 # CARREGAMENTO DAS IMAGENS
 #menu
@@ -89,10 +92,47 @@ pata_vermelha = pygame.image.load('imagens/pata_vermelha_sem_fundo.png')
 pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
+#quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
+font = pygame.font.Font(None, 24) #definir fonte
+surface_texto = font.render(f"Aperte enter", True, 'black')
+
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       pygame.quit()
+    elif event.type == pygame.MOUSEMOTION:
+      mouse_x = event.pos[0]
+      mouse_y = event.pos[1]
+    elif event.type == pygame.KEYDOWN:
+      if event.key == pygame.K_RETURN:  # tecla de espaço
+        tela_mapa = True
+
+      #CLICAR NOS QUADRADOS VERMELHOS
+      '''for event in pg.event.get():
+        if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+          pg.quit()
+          sys.exit()
+        elif event.type == pg.MOUSEBUTTONUP: # trata liberação do botão do mouse
+          posicao_clique = event.pos  # coordenadas do ponteiro do mouse
+          # verifica se jogador clicou no bloco aceso
+          if alvo is not None and alvo.rect.collidepoint(posicao_clique):
+            alvo.apagar()
+            alvo = None
+            contagem += 1'''
+
+  #quadrado.fill((225, 0, 0))         # preenche o quadrado com cor branca
+  #janela.blit(quadrado, (50, 200)) # desenha o quadrado no quadro atual e nas coordenadas indicadas
+
+  #PARTE 1: MENU
+  janela.blit(menu, (0, 0))
+
+  #PARTE 2: MAPA
+  if tela_mapa == True:
+    janela.fill((255, 255, 255)) # apaga o quadro atual
+    janela.blit(mapa, (0, 0))
+    janela.blit(black, (mouse_x, mouse_y))
+
+
 
   pygame.display.flip() # Desenha o quadro atual na tela
   clock.tick(60)
