@@ -17,7 +17,7 @@ menu = pygame.transform.scale(menu, (1000, 700))
 #black (sem fundo)
 black = pygame.image.load('imagens/black_sem_fundo.png')
 black = black.convert_alpha()
-black = pygame.transform.scale(black, (52,35))
+black = pygame.transform.scale(black, (62,45))
 black = pygame.transform.flip(black, True, False) #imagem, inverter horizontalmente?, inverter verticalmente?
 
 #mapa
