@@ -92,9 +92,6 @@ pata_vermelha = pygame.image.load('imagens/pata_vermelha_sem_fundo.png')
 pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
-#quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
-font = pygame.font.Font(None, 24) #definir fonte
-surface_texto = font.render(f"Aperte enter", True, 'black')
 
 while True:
   for event in pygame.event.get():
