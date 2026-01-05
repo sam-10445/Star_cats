@@ -146,10 +146,10 @@ while True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(mapa, (0, 0))
     janela.blit(black, (mouse_x, mouse_y))
-    quadrado.fill((225, 0, 0))         # preenche o quadrado com cor branca
-    janela.blit(quadrado, (105, 20)) #Há duas possibilidades: 
-    #janela.blit(quadrado, (109, 20)) 1. colocar a imagem nessas cordenadas e deixar ela clicavel
-                                     #2.deixar o quadrado com o texto(prefiro a primeira)
+    quadrado.fill((225, 0, 0))
+    janela.blit(quadrado, (105, 20)) #cordenadas botão_1
+    janela.blit(quadrado, (603, 120)) #cordenadas botão_3
+    janela.blit(quadrado, (850, 456)) #cordenadas botão_2
 
 
 
