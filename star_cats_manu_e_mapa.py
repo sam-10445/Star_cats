@@ -7,6 +7,7 @@ clock = pygame.time.Clock()
 
 mouse_x, mouse_y = 0,0
 tela_mapa = False
+tela_fase1=False
 
 # CARREGAMENTO DAS IMAGENS
 #menu
@@ -108,9 +109,13 @@ pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
 quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
+quadrado_0= pygame.Rect(141, 283, 30, 30)
+quadrado_1 = pygame.Rect(105, 20, 30, 30)
+quadrado_2 =pygame.Rect(850, 456, 30, 30)
+quadrado_3 = pygame.Rect(603,120, 30, 30) # cria quadrado com 30 pixels de lado
 font = pygame.font.Font(None, 24) #definir fonte
 surface_texto = font.render(f"Aperte enter", True, 'black')
-
+pos=((141, 283))
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
@@ -147,13 +152,22 @@ while True:
     janela.blit(mapa, (0, 0))
     janela.blit(black, (mouse_x, mouse_y))
     quadrado.fill((225, 0, 0))
-    janela.blit(quadrado, (141, 283)) #cordenadas botão_0
-    janela.blit(quadrado, (105, 20)) #cordenadas botão_1
-    janela.blit(quadrado, (850, 456)) #cordenadas botão_2
-    janela.blit(quadrado, (603, 120)) #cordenadas botão_3
-    
+    janela.blit(quadrado, quadrado_0) #cordenadas botão_0
+    janela.blit(quadrado, quadrado_1) #cordenadas botão_1
+    janela.blit(quadrado, quadrado_2) #cordenadas botão_2
+    janela.blit(quadrado, quadrado_3)
+  if event.type == pygame.MOUSEBUTTONDOWN:#detecta evento tipo mouse
+    if event.button == 1 and tela_mapa:# indica que o botão clicado seja o esquerdo e somente seja clicado no mapa
+        if quadrado_1.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
+          tela_mapa = False
+          tela_fase1=True
+  if tela_fase1==True:
+    janela.fill((255, 255, 255)) # apaga o quadro atual
+    janela.blit(passaro, (0, 0))
 
-
+          
+                
+         
 
   pygame.display.flip() # Desenha o quadro atual na tela
   clock.tick(60)
