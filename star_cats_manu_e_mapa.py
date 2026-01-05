@@ -9,7 +9,7 @@ mouse_x, mouse_y = 0,0
 tela_mapa = False
 tela_boss_1=False
 tela_boss_2=False
-tela_fase_3=False
+tela_boss_3=False
 
 # CARREGAMENTO DAS IMAGENS
 #menu
@@ -163,9 +163,21 @@ while True:
         if quadrado_1.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
           tela_mapa = False
           tela_boss_1=True
+        elif quadrado_2.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
+          tela_mapa = False
+          tela_boss_2=True
+        elif quadrado_3.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
+          tela_mapa = False
+          tela_boss_3=True
   if tela_boss_1==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(passaro, (0, 0))
+  if tela_boss_2==True:
+    janela.fill((255, 255, 255)) # apaga o quadro atual
+    janela.blit(peixe, (0, 0))
+  if tela_boss_3==True:
+    janela.fill((255, 255, 255)) # apaga o quadro atual
+    janela.blit(cao, (0, 0))
 
           
                 
