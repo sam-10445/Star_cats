@@ -7,6 +7,7 @@ clock = pygame.time.Clock()
 
 mouse_x, mouse_y = 0,0
 tela_mapa = False
+tela_dialogo=False
 tela_boss_1=False
 tela_boss_2=False
 tela_boss_3=False
@@ -42,7 +43,10 @@ botão_2= pygame.transform.scale(botão_2, ("?, ?"))
 botão_3 = pygame.image.load('imagens/botao3.png') 
 botão_3= botão_3.convert_alpha()
 botão_3= pygame.transform.scale(botão_3, ("?, ?"))'''
-
+#primeiro dialogo
+dialogo_1 = pygame.image.load('imagens/conversa_gato.png')
+dialogo_1 = dialogo_1.convert()
+dialogo_1 = pygame.transform.scale(dialogo_1, (1000, 700))
 #passaro
 passaro = pygame.image.load('imagens/passaro.png')
 passaro = passaro.convert()
@@ -158,9 +162,13 @@ while True:
     janela.blit(quadrado, quadrado_1) #cordenadas botão_1
     janela.blit(quadrado, quadrado_2) #cordenadas botão_2
     janela.blit(quadrado, quadrado_3)
+
   if event.type == pygame.MOUSEBUTTONDOWN:#detecta evento tipo mouse
-    if event.button == 1 and tela_mapa:# indica que o botão clicado seja o esquerdo e somente seja clicado no mapa
-        if quadrado_1.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
+    if event.button == 1 and tela_mapa:
+        if quadrado_0.collidepoint(event.pos):
+          tela_mapa= False
+          tela_dialogo=True
+        elif quadrado_1.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
           tela_mapa = False
           tela_boss_1=True
         elif quadrado_2.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
@@ -169,12 +177,18 @@ while True:
         elif quadrado_3.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
           tela_mapa = False
           tela_boss_3=True
+  if tela_dialogo==True:
+    janela.fill((255, 255, 255)) # apaga o quadro atual
+    janela.blit(dialogo_1, (0, 0))
+    
   if tela_boss_1==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(passaro, (0, 0))
+
   if tela_boss_2==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(peixe, (0, 0))
+
   if tela_boss_3==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(cao, (0, 0))
