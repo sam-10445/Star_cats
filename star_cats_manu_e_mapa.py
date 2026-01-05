@@ -7,7 +7,9 @@ clock = pygame.time.Clock()
 
 mouse_x, mouse_y = 0,0
 tela_mapa = False
-tela_fase1=False
+tela_boss_1=False
+tela_boss_2=False
+tela_fase_3=False
 
 # CARREGAMENTO DAS IMAGENS
 #menu
@@ -160,8 +162,8 @@ while True:
     if event.button == 1 and tela_mapa:# indica que o botão clicado seja o esquerdo e somente seja clicado no mapa
         if quadrado_1.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
           tela_mapa = False
-          tela_fase1=True
-  if tela_fase1==True:
+          tela_boss_1=True
+  if tela_boss_1==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(passaro, (0, 0))
 
