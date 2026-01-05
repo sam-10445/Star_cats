@@ -1,7 +1,7 @@
 import pygame
 import pygame as pg 
 pygame.init()
-pygame.display.set_caption("Star Cat")#a
+pygame.display.set_caption("Star Cats")#a
 janela = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
 
@@ -24,6 +24,21 @@ black = pygame.transform.flip(black, True, False) #imagem, inverter horizontalme
 mapa = pygame.image.load('imagens/mapa.png') 
 mapa = mapa.convert_alpha()
 mapa = pygame.transform.scale(mapa, (1000, 700))
+
+#botão de fases 1
+'''botão_1 = pygame.image.load('imagens/botao1.png') 
+botão_1= botão_1.convert_alpha()
+botão_1= pygame.transform.scale(botão_1, ("?, ?"))
+                                          
+#botão de fases 2
+botão_2 = pygame.image.load('imagens/botao2.png') 
+botão_2= botão_2.convert_alpha()
+botão_2= pygame.transform.scale(botão_2, ("?, ?"))
+
+#botão de fases 3
+botão_3 = pygame.image.load('imagens/botao3.png') 
+botão_3= botão_3.convert_alpha()
+botão_3= pygame.transform.scale(botão_3, ("?, ?"))'''
 
 #passaro
 passaro = pygame.image.load('imagens/passaro.png')
@@ -92,7 +107,7 @@ pata_vermelha = pygame.image.load('imagens/pata_vermelha_sem_fundo.png')
 pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
-#quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
+quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
 font = pygame.font.Font(None, 24) #definir fonte
 surface_texto = font.render(f"Aperte enter", True, 'black')
 
@@ -131,6 +146,10 @@ while True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(mapa, (0, 0))
     janela.blit(black, (mouse_x, mouse_y))
+    quadrado.fill((225, 0, 0))         # preenche o quadrado com cor branca
+    janela.blit(quadrado, (105, 20)) # Há duas possibilidades: 
+    #janela.blit(quadrado, (109, 20)) 1. colocar a imagem nessas cordenadas e deixar ela clicavel
+                                     #2.deixar o quadrado com o texto(prefiro a primeira)
 
 
 
