@@ -147,10 +147,11 @@ while True:
     janela.blit(mapa, (0, 0))
     janela.blit(black, (mouse_x, mouse_y))
     quadrado.fill((225, 0, 0))
-    janela.blit(quadrado, (105, 20)) #cordenadas botão_1
-    janela.blit(quadrado, (603, 120)) #cordenadas botão_3
-    janela.blit(quadrado, (850, 456)) #cordenadas botão_2
     janela.blit(quadrado, (141, 283)) #cordenadas botão_0
+    janela.blit(quadrado, (105, 20)) #cordenadas botão_1
+    janela.blit(quadrado, (850, 456)) #cordenadas botão_2
+    janela.blit(quadrado, (603, 120)) #cordenadas botão_3
+    
 
 
 
