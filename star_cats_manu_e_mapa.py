@@ -30,20 +30,6 @@ mapa = pygame.image.load('imagens/mapa.png')
 mapa = mapa.convert_alpha()
 mapa = pygame.transform.scale(mapa, (1000, 700))
 
-#botão de fases 1
-'''botão_1 = pygame.image.load('imagens/botao1.png') 
-botão_1= botão_1.convert_alpha()
-botão_1= pygame.transform.scale(botão_1, ("?, ?"))
-                                          
-#botão de fases 2
-botão_2 = pygame.image.load('imagens/botao2.png') 
-botão_2= botão_2.convert_alpha()
-botão_2= pygame.transform.scale(botão_2, ("?, ?"))
-
-#botão de fases 3
-botão_3 = pygame.image.load('imagens/botao3.png') 
-botão_3= botão_3.convert_alpha()
-botão_3= pygame.transform.scale(botão_3, ("?, ?"))'''
 #primeiro dialogo
 dialogo_1 = pygame.image.load('imagens/conversa_gato.png')
 dialogo_1 = dialogo_1.convert()
@@ -202,10 +188,6 @@ while True:
   if tela_boss_3==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(cao, (0, 0))
-
-          
-                
-         
 
   pygame.display.flip() # Desenha o quadro atual na tela
   clock.tick(60)
