@@ -153,7 +153,7 @@ while True:
     janela.blit(quadrado, quadrado_4)#cordenadas botão_3
 
   if event.type == pygame.MOUSEBUTTONDOWN:#detecta evento tipo mouse
-    if event.button == 1 and tela_mapa:
+    if event.button == 1 and tela_mapa:#diz que o botão a ser apertado tem que ser o esquerdo do mouse e que só pode ser apertado no mapa
         if quadrado_0.collidepoint(event.pos):
           tela_mapa= False
           tela_dialogo=True
