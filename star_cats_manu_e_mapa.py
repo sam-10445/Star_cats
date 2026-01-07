@@ -102,7 +102,7 @@ pata_vermelha = pata_vermelha.convert_alpha()
 pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
 quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
-quadrado_0= pygame.Rect(141, 283, 30, 30)
+quadrado_0= pygame.Rect(141, 283, 30, 30)#cria um 'restangulo' com as cordenadas de onde ele deve ficar, a altua e a largura(x,y,A.L)
 quadrado_1 = pygame.Rect(105, 20, 30, 30)
 quadrado_2 =pygame.Rect(850, 456, 30, 30)
 quadrado_3 = pygame.Rect(603,120, 30, 30)
