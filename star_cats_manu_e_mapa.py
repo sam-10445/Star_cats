@@ -109,7 +109,7 @@ quadrado_3 = pygame.Rect(603,120, 30, 30)
 quadrado_4 = pygame.Rect(512,350, 30, 30) # cria quadrado com 30 pixels de lado
 font = pygame.font.Font(None, 24) #definir fonte
 surface_texto = font.render(f"Aperte enter", True, 'black')
-pos=((141, 283))
+
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
