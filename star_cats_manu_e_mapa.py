@@ -103,9 +103,9 @@ pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 
 quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
 quadrado_0= pygame.Rect(141, 283, 30, 30)#cria um 'restangulo' com as cordenadas de onde ele deve ficar, a altua e a largura(x,y,A.L)
-quadrado_1 = pygame.Rect(105, 20, 30, 30)
-quadrado_2 =pygame.Rect(850, 456, 30, 30)
-quadrado_3 = pygame.Rect(603,120, 30, 30)
+quadrado_1 = pygame.Rect(105, 20, 30, 30)#cria um 'restangulo' com as cordenadas de onde ele deve ficar, a altua e a largura(x,y,A.L)
+quadrado_2 =pygame.Rect(850, 456, 30, 30)#cria um 'restangulo' com as cordenadas de onde ele deve ficar, a altua e a largura(x,y,A.L)
+quadrado_3 = pygame.Rect(603,120, 30, 30)#cria um 'restangulo' com as cordenadas de onde ele deve ficar, a altua e a largura(x,y,A.L)
 quadrado_4 = pygame.Rect(512,350, 30, 30) # cria quadrado com 30 pixels de lado
 font = pygame.font.Font(None, 24) #definir fonte
 surface_texto = font.render(f"Aperte enter", True, 'black')
@@ -144,13 +144,13 @@ while True:
   if tela_mapa == True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(mapa, (0, 0))
-    janela.blit(black, (mouse_x, mouse_y))
     quadrado.fill((225, 0, 0))
     janela.blit(quadrado, quadrado_0) #cordenadas botão_0
     janela.blit(quadrado, quadrado_1) #cordenadas botão_1
     janela.blit(quadrado, quadrado_2) #cordenadas botão_2
     janela.blit(quadrado, quadrado_3)#cordenadas botão_3
     janela.blit(quadrado, quadrado_4)#cordenadas botão_3
+    janela.blit(black, (mouse_x, mouse_y))
 
   if event.type == pygame.MOUSEBUTTONDOWN:#detecta evento tipo mouse
     if event.button == 1 and tela_mapa:#diz que o botão a ser apertado tem que ser o esquerdo do mouse e que só pode ser apertado no mapa
@@ -169,6 +169,15 @@ while True:
         elif quadrado_4.collidepoint(event.pos):#verifica se o botão clicado colidiu com o quadrado.
           tela_mapa = False
           tela_loja=True
+  if event.type== pygame.KEYDOWN:#tentativa de um possivel retorno do jogador para tela inicial.
+    if event.key == pygame.K_ESCAPE:#indentidica se a tecla apertada é esc
+      tela_mapa==True
+      tela_loja= False
+      tela_dialogo=False
+      tela_boss_1=False
+      tela_boss_2=False
+      tela_boss_3=False
+
   if tela_dialogo==True:
     janela.fill((255, 255, 255)) # apaga o quadro atual
     janela.blit(dialogo_1, (0, 0))
