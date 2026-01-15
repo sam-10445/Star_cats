@@ -100,10 +100,6 @@ pata_vermelha = pygame.transform.scale(pata_vermelha, (195.5, 209))
 font = pygame.font.Font(None, 30) #definir fonte
 surface_texto_inicial = font.render(f"Você naufraga em uma ilha. Parece que há algo faltando.", True, 'black')
 
-#dialogo inicial
-font = pygame.font.Font(None, 30)
-surface_dialogo_inicial1 = font.render(f"Lorem", True, "black")
-
 #quadrado = pygame.Surface([30, 30]) # cria quadrado com 30 pixels de lado
 while True:
   for event in pygame.event.get():
@@ -117,23 +113,6 @@ while True:
         tela_mapa = True
       elif event.key == pygame.K_DOWN: # seta para baixo
         passar_inicial = True
-    
-
-      #CLICAR NOS QUADRADOS VERMELHOS
-      '''for event in pg.event.get():
-        if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-          pg.quit()
-          sys.exit()
-        elif event.type == pg.MOUSEBUTTONUP: # trata liberação do botão do mouse
-          posicao_clique = event.pos  # coordenadas do ponteiro do mouse
-          # verifica se jogador clicou no bloco aceso
-          if alvo is not None and alvo.rect.collidepoint(posicao_clique):
-            alvo.apagar()
-            alvo = None
-            contagem += 1'''
-
-  #quadrado.fill((225, 0, 0))         # preenche o quadrado com cor branca
-  #janela.blit(quadrado, (50, 200)) # desenha o quadrado no quadro atual e nas coordenadas indicadas
 
   #*DESENHAR NA JANELA:
   #PARTE 1: MENU
