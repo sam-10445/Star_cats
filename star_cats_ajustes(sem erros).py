@@ -35,7 +35,7 @@ pular = 0
 #variáveis de status (iniciais)
 dificuldade = "fácil"
 chaves = 0
-vidas = 1
+vidas = 2
 dinheiro = 300
 
 #variaveis das batalhas
@@ -46,8 +46,8 @@ nota = 0
 nota_passaro = ""
 nota_peixe = ""
 nota_cao = ""
-pontos_black1 = 0 #o valor deve ser zero
-pontos_black2 = 50 #o valor deve ser zero
+pontos_black1 = 30 #o valor deve ser zero
+pontos_black2 = 40 #o valor deve ser zero
 pontos_black3 = 0 #o valor deve ser zero
 
 #controle de batalhas e vitórias
@@ -458,28 +458,29 @@ while True:
             if event.key == pygame.K_y and abrir_tela_pontuacao == True:
                 abrir_tela_pontuacao = False
 
-                if nota == 1:
+                if chaves == 0:
                     if nota_passaro == "A":
                         abrir_tela_de_chaves = True
                         tarefa += 1
                         chaves += 1
                     else:
-                        abrir_tela_game_over = True
                         vidas -= 1
+                        abrir_tela_game_over = True
 
-                elif nota == 2:
+                elif chaves == 1:
                     if nota_peixe == "A":
                         abrir_tela_de_chaves = True
                         tarefa += 1
                         chaves += 1
                     else:
-                        abrir_tela_game_over = True
                         vidas -= 1
+                        abrir_tela_game_over = True
 
-                elif nota == 3:
+                elif chaves == 2:
                     if nota_cao == "A":
                         abrir_tela_de_vitoria = True
                     else:
+                        vidas -= 1
                         abrir_tela_game_over = True
 
 
@@ -588,30 +589,33 @@ while True:
         #NOTA
         #comparar prontos do black com o do boss
         #passaro
-        if pontos_black1 >= pontos_passaro:
-            nota_passaro = "A"
-        else:
-            nota_passaro = "F"
-            ir_pega_chave_passaro = True
+        if chaves == 0:
+            if pontos_black1 >= pontos_passaro:
+                nota_passaro = "A"
+            else:
+                nota_passaro = "F"
+                ir_pega_chave_passaro = True
 
         #peixe
-        if pontos_black2 >= pontos_peixe:
-            nota_peixe = "A"
-        else:
-            nota_peixe = "F"
-            ir_pega_chave_peixe = True
+        if chaves == 1:
+            if pontos_black2 >= pontos_peixe:
+                nota_peixe = "A"
+            else:
+                nota_peixe = "F"
+                ir_pega_chave_peixe = True
 
         #cao
-        if pontos_black3 >= pontos_cao:
-            nota_cao = "A"
-            abrir_tela_de_vitoria = True
-        else:
-            nota_cao = "F"
-            abrir_tela_game_over = True
-        #
+        if chaves == 2:
+            if pontos_black3 >= pontos_cao:
+                nota_cao = "A"
+                abrir_tela_de_vitoria = True
+            else:
+                nota_cao = "F"
+                abrir_tela_game_over = True
+            #
 
         font_nota = pygame.font.Font(None, 100) 
-        if nota == 1: #passaro
+        if chaves == 0: #passaro
             if nota_passaro == "A":
                 informacao_nota = font_nota.render(f"{nota_passaro}", True, 'blue')
                 janela.blit(informacao_nota, (720, 500))
@@ -619,7 +623,7 @@ while True:
                 informacao_nota = font_nota.render(f"{nota_passaro}", True, 'red')
                 janela.blit(informacao_nota, (720, 500))
 
-        if nota == 2: #peixe
+        if chaves == 1: #peixe
             if nota_peixe == "A":
                 informacao_nota = font_nota.render(f"{nota_peixe}", True, 'blue')
                 janela.blit(informacao_nota, (720, 500))
@@ -627,7 +631,7 @@ while True:
                 informacao_nota = font_nota.render(f"{nota_peixe}", True, 'red')
                 janela.blit(informacao_nota, (720, 500))
 
-        if nota == 3: #cao
+        if chaves == 2: #cao
             if nota_cao == "A":
                 informacao_nota = font_nota.render(f"{nota_cao}", True, 'blue')
                 janela.blit(informacao_nota, (720, 500))
@@ -795,10 +799,9 @@ while True:
 
             if pontos_black1 >= pontos_passaro:
                 nota_passaro = "A"
-            else:
+            elif chaves == 0:
                 nota_passaro = "F"
                 ir_pega_chave_passaro = True
-                vidas -= 1
 
             abrir_tela_pontuacao = True
 
@@ -843,10 +846,8 @@ while True:
 
             if pontos_black2 >= pontos_peixe:
                 nota_peixe = "A"
-            else:
+            elif chaves == 1:
                 nota_peixe = "F"
-                ir_pega_chave_peixe = True
-                vidas -= 1
 
             abrir_tela_pontuacao = True
 
@@ -891,9 +892,8 @@ while True:
             if pontos_black3 >= pontos_cao:
                 nota_cao = "A"
                 abrir_tela_de_vitoria = True
-            else:
+            elif chaves == 2:
                 nota_cao = "F"
-                vidas -= 1
                 abrir_tela_de_derrota = True
 
             abrir_tela_pontuacao = True
