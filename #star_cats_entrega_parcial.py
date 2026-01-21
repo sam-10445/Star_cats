@@ -301,71 +301,275 @@ pega_chave = font.render(f"(conseguir a chave)", True, 'red')
 #texto inicial:
 font = pygame.font.Font(None, 30) 
 texto_inicial = font.render(f"Parece que não foi uma boa ideia pescar durante uma tempestade.", True, 'black')
-texto_inicial1 = font.render(f"Você naufragou em uma ilha desconhecida...", True, 'black')
-texto_inicial2 = font.render(f"Ela parece meio abandonada.", True, 'black')
-texto_inicial3 = font.render(f"Você percebe que algo importante não está mais com você.", True, 'black')
+texto_inicial1 = font.render(f"Seu barco virou e agora você está em uma ilha desconhecida.", True, 'black')
+texto_inicial2 = font.render(f"Ela parece meio abandonada - você pensa.", True, 'black')
+texto_inicial3 = font.render(f"Quando percebe que algo importante não está mais com você.", True, 'black')
 #dialogo_loja
 font = pygame.font.Font(None, 30) 
-dialogo_loja = font.render(f"Clique nos itens e compre, mas lembre-se que o dinheiro é finito", True, 'black')
-#primeiro_dialogo:
+dialogo_loja1 = font.render(f"Clique nos itens que deseja comprar.", True, 'white')
+dialogo_loja2 = font.render(f"Mas use o dinheiro com sabedoria.", True, 'white')
+
+#PRIMEIRO DIÁLOGO:
 font = pygame.font.Font(None, 30) 
-primeiro_dialogo1 = font.render(f"Uma estrela? Isso não é algo comum de se perder.", True, 'black')
-primeiro_dialogo2 = font.render(f"Vou ser honesto: não sei onde ela está.", True, 'black')
-primeiro_dialogo3 = font.render(f"Mas talvez eu tenha uma pista.", True, 'black')
-primeiro_dialogo4 = font.render(f"Ao norte da ilha vive um cão… ele coleciona tudo que acha valioso.", True, 'black')
-primeiro_dialogo5 = font.render(f"Se encontrou sua estrela, pode ter certeza de que ficou com ela.", True, 'black')
-primeiro_dialogo6 = font.render(f"O problema é chegar até lá.", True, 'black')
-primeiro_dialogo7 = font.render(f"O lugar é fechado por dois cadeados, e nisso eu não posso ajudar.", True, 'black')
-primeiro_dialogo8 = font.render(f"Talvez o pássaro ao norte saiba de algo.", True, 'black')
-primeiro_dialogo9 = font.render(f"Ah, e se precisar de uma “ajudinha”", True, 'black')
-primeiro_dialogo10 = font.render(f"o comerciante no centro da ilha vende coisas bem interessantes.", True, 'black')
-primeiro_dialogo11 = font.render(f"Boa sorte, visitante.", True, 'black')
-#dialogo_passaro:
+primeiro_dialogo1 = font.render(f"Olá, pequeno visitante!", True, 'black')
+primeiro_dialogo2 = font.render(f"O que aconteceu? Você parece perdido.", True, 'black')
+#pergunta obrigatoria: Meu barco virou.
+pergunta1_gato = font.render(f"  Meu barco virou.", True, 'white')
+#
+primeiro_dialogo3 = font.render(f"...", True, 'black')
+primeiro_dialogo4 = font.render(f"Ah… sinto muito.", True, 'black')
+#pergunta obrigatoria: Estou procurando por uma estrela. 
+pergunta2_gato = font.render(f" Estou procurando por uma estrela.", True, 'white')
+#
+primeiro_dialogo5 = font.render(f"...", True, 'black')
+primeiro_dialogo6 = font.render(f"Uma estrela?! …", True, 'black')
+primeiro_dialogo7 = font.render(f"Isso não é algo comum de se perder.", True, 'black')
+primeiro_dialogo8 = font.render(f"Bom… não sei onde ela está,", True, 'black')
+primeiro_dialogo9 = font.render(f"mas talvez eu tenha um palpite.", True, 'black')
+primeiro_dialogo10 = font.render(f"Ao norte da ilha vive um cão.", True, 'black')
+primeiro_dialogo11 = font.render(f"Ele costuma juntar tudo o que considera valioso.", True, 'black')
+primeiro_dialogo12 = font.render(f"Se sua estrela existe,", True, 'black')
+primeiro_dialogo13 = font.render(f"e se ele a encontrou,", True, 'black')
+primeiro_dialogo14 = font.render(f"é bem provável que esteja com ele agora.", True, 'black')
+primeiro_dialogo15 = font.render(f"O problema é chegar até lá.", True, 'black')
+primeiro_dialogo16 = font.render(f"O lugar é trancado por dois cadeados,", True, 'black')
+primeiro_dialogo17 = font.render(f"e eu não tenho as chaves.", True, 'black')
+primeiro_dialogo18 = font.render(f"Talvez o pássaro ao norte consiga te ajudar.", True, 'black')
+primeiro_dialogo19 = font.render(f"Que tal ir falar com ele depois?", True, 'black')
+primeiro_dialogo20 = font.render(f"Sinto muito por não poder fazer mais.", True, 'black')
+primeiro_dialogo21 = font.render(f"Mas… se quiser, pode me fazer algumas perguntas.", True, 'black')
+#pergunta obrigatoria: Quem é você?
+pergunta3_gato = font.render(f" Quem é você?", True, 'white')
+#
+primeiro_dialogo22 = font.render(f"...", True, 'black')
+primeiro_dialogo23 = font.render(f"Eu sou o administrador desta ilha!", True, 'black')
+primeiro_dialogo24 = font.render(f"Ou… pelo menos, era.", True, 'black')
+primeiro_dialogo25 = font.render(f"Mais alguma pergunta?", True, 'black')
+#pergunta obrigatoria: O que aconteceu com a ilha?
+pergunta4_gato = font.render(f" O que aconteceu com a ilha?", True, 'white')
+#
+primeiro_dialogo26 = font.render(f"...", True, 'black')
+primeiro_dialogo27 = font.render(f"…É uma longa história,", True, 'black')
+primeiro_dialogo28 = font.render(f"mas vou tentar resumir.", True, 'black')
+primeiro_dialogo29  = font.render(f"No começo, éramos só nós três:", True, 'black')
+primeiro_dialogo30 = font.render(f"eu, o pássaro e o peixe.", True, 'black')
+primeiro_dialogo31 = font.render(f"Vivíamos bem assim.", True, 'black')
+primeiro_dialogo32 = font.render(f"Mas quando aquele canino chegou,", True, 'black')
+primeiro_dialogo33 = font.render(f"as coisas... mudaram.", True, 'black')
+primeiro_dialogo34 = font.render(f"Ele começou a recolher tudo o que encontrava.", True, 'black')
+primeiro_dialogo35 = font.render(f"Sendo dele… ou não.", True, 'black')
+primeiro_dialogo36 = font.render(f"Algumas dessas coisas eram importantes para nós.", True, 'black')
+primeiro_dialogo37 = font.render(f"Ele era mais forte,", True, 'black')
+primeiro_dialogo38 = font.render(f"então não conseguimos impedi-lo.", True, 'black')
+primeiro_dialogo39 = font.render(f"Hoje, ele controla quem entra e quem sai da ilha.", True, 'black')
+primeiro_dialogo40 = font.render(f"As únicas visitas que recebemos agora são…", True, 'black')
+primeiro_dialogo41 = font.render(f"os comerciantes que ele permite entrar…", True, 'black')
+primeiro_dialogo42 = font.render(f"E aqueles que acabam parando aqui sem querer.", True, 'black')
+primeiro_dialogo43 = font.render(f"Como você.", True, 'black')
+primeiro_dialogo44 = font.render(f"Mais alguma pergunta?", True, 'black')
+#pergunta obrigatoria: Tem algum jeito de sair da ilha?
+pergunta5_gato = font.render(f" Tem algum jeito de sair da ilha?", True, 'white')
+#
+primeiro_dialogo45 = font.render(f"...", True, 'black')
+primeiro_dialogo46 = font.render(f"Mas é claro que tem!", True, 'black')
+primeiro_dialogo47 = font.render(f"O difícil mesmo é ficar.", True, 'black')
+primeiro_dialogo48 = font.render(f"O cachorro não costuma deixar visitantes por muito tempo.", True, 'black')
+primeiro_dialogo49 = font.render(f"Por isso, sempre mantenho um barco reserva.", True, 'black')
+primeiro_dialogo50 = font.render(f"Se quiser, posso buscá-lo agora mesmo", True, 'black')
+primeiro_dialogo51 = font.render(f"e você pode ir para casa.", True, 'black')
+primeiro_dialogo52 = font.render(f"Quer que eu vá buscá-lo?", True, 'black')
+#pergunta obrigatoria: Ainda não. Preciso da minha estrela
+pergunta6_gato = font.render(f" Ainda não. Preciso da minha estrela", True, 'white')
+#
+primeiro_dialogo53 = font.render(f"...", True, 'black')
+primeiro_dialogo54 = font.render(f"Ah… é mesmo. A estrela.", True, 'black')
+primeiro_dialogo55 = font.render(f"Não sei se você vai conseguir recuperá-la,", True, 'black')
+primeiro_dialogo56 = font.render(f"mas quando estiver pronto para partir…", True, 'black')
+primeiro_dialogo57 = font.render(f"Pode contar comigo para preparar sua passagem de volta.", True, 'black')
+primeiro_dialogo58 = font.render(f"Mais alguma pergunta?", True, 'black')
+#pergunta obrigatoria: Há algo que possa me ajudar?
+pergunta7_gato = font.render(f" Há algo que possa me ajudar?", True, 'white')
+#
+primeiro_dialogo59 = font.render(f"...", True, 'black')
+primeiro_dialogo60 = font.render(f"Uh… deixa eu pensar.", True, 'black')
+primeiro_dialogo61 = font.render(f"No centro da ilha há um comerciante", True, 'black')
+primeiro_dialogo62  = font.render(f"que eu nunca tinha visto antes.", True, 'black')
+primeiro_dialogo63 = font.render(f"Ele vende coisas interessantes.", True, 'black')
+primeiro_dialogo64 = font.render(f"Talvez alguma delas possa te ajudar.", True, 'black')
+primeiro_dialogo65 = font.render(f"Se estiver curioso,", True, 'black')
+primeiro_dialogo66 = font.render(f"dê uma olhada nas mercadorias.", True, 'black')
+primeiro_dialogo67 = font.render(f"Mais alguma pergunta?", True, 'black')
+#pergunta obrigatoria: Não, obrigado.
+pergunta8_gato = font.render(f" Não, obrigado.", True, 'white')
+#
+primeiro_dialogo68 = font.render(f"...", True, 'black')
+primeiro_dialogo69 = font.render(f"Espero ter ajudado.", True, 'black')
+primeiro_dialogo70 = font.render(f"Não se esqueça de visitar o pássaro ao norte…", True, 'black')
+primeiro_dialogo71 = font.render(f"E a loja no centro da ilha.", True, 'black')
+primeiro_dialogo72 = font.render(f"Boa sorte :)", True, 'black')
+
+
+#DIÁLOGO PASSARO
 font = pygame.font.Font(None, 30) 
-dialogo_passaro1 = font.render(f"Uma estrela?", True, 'black')
-dialogo_passaro2 = font.render(f"E desde quando gato precisa disso, hein?", True, 'black')
-dialogo_passaro3 = font.render(f"Olha, gatinho, não vi nenhuma estrela passeando por aí.", True, 'black')
-dialogo_passaro4 = font.render(f"E a ilha nem é tão grande assim.", True, 'black')
-dialogo_passaro5 = font.render(f"Mas se ela existe…", True, 'black')
-dialogo_passaro6 = font.render(f"provavelmente está naquela casa fedida de cachorro no norte da ilha.", True, 'black')
-dialogo_passaro7 = font.render(f"Trancada? Claro que está!", True, 'black')
-dialogo_passaro8 = font.render(f"Dois cadeados… que chato, né? kk.", True, 'black')
-dialogo_passaro9 = font.render(f"Eu tenho uma das chaves e o peixe no lago tem a outra.", True, 'black')
-dialogo_passaro10 = font.render(f"Mas não pense que vou dar a minha de graça.", True, 'black')
-dialogo_passaro11 = font.render(f"Que tal uma batalha?", True, 'black')
-dialogo_passaro12 = font.render(f"Ou vai me dizer que está com medo?", True, 'black')
-dialogo_passaro13 = font.render(f"Se vencer, a chave é sua!", True, 'black')
-#dialogo_peixe
+#pergunta obrigatoria: Você viu uma Estrela? 
+pergunta1_passaro = font.render(f"  Você viu uma Estrela?", True, 'white')
+#
+dialogo_passaro1 = font.render(f"...", True, 'black')
+dialogo_passaro2 = font.render(f"Uma estrela?", True, 'black')
+dialogo_passaro3 = font.render(f"E desde quando isso é possível?", True, 'black')
+dialogo_passaro4 = font.render(f"Olha, gatinho", True, 'black')
+dialogo_passaro5 = font.render(f"não vi nenhuma estrela passeando por aí.", True, 'black')
+dialogo_passaro6 = font.render(f"E a ilha nem é tão grande assim.", True, 'black')
+dialogo_passaro7 = font.render(f"Mas se ela realmente existe…", True, 'black')
+dialogo_passaro8 = font.render(f"provavelmente está na casa daquele cachorro.", True, 'black')
+dialogo_passaro9 = font.render(f"Ele gosta de guardar tudo o que encontra.", True, 'black')
+dialogo_passaro10 = font.render(f"Mesmo quando isso é importante para outra pessoa…", True, 'black')
+#pergunta obrigatoria: O que aconteceu? 
+pergunta2_passaro = font.render(f"  O que aconteceu?", True, 'white')
+#
+dialogo_passaro11 = font.render(f"...", True, 'black')
+dialogo_passaro12 = font.render(f"Ah… o de sempre!", True, 'black')
+dialogo_passaro13 = font.render(f"Ele chega, olha em volta", True, 'black')
+dialogo_passaro14 = font.render(f"e decide que aquilo precisa ser “guardado”.", True, 'black')
+dialogo_passaro15 = font.render(f"Mesmo quando deu trabalho conseguir.", True, 'black')
+dialogo_passaro16 = font.render(f"...", True, 'black')
+dialogo_passaro17 = font.render(f"No meu caso…", True, 'black')
+dialogo_passaro18 = font.render(f"foram minhas sementes favoritas.", True, 'black')
+dialogo_passaro19 = font.render(f"Não eram raras.", True, 'black')
+dialogo_passaro20 = font.render(f"Só tinham um gosto especial.", True, 'black')
+dialogo_passaro21 = font.render(f"Agora sinto falta delas.", True, 'black')
+#pergunta obrigatoria: Você tem a chave de um dos cadeados?
+pergunta3_passaro = font.render(f" Você tem a chave de um dos cadeados?", True, 'white')
+#
+dialogo_passaro22 = font.render(f"...", True, 'black')
+dialogo_passaro23 = font.render(f"Cadeado…?", True, 'black')
+dialogo_passaro24 = font.render(f"Ah, é. A estrela.", True, 'black')
+dialogo_passaro25 = font.render(f"Não me diga que está pensando em ir buscá-la? Haha.", True, 'black')
+dialogo_passaro26 = font.render(f"Olha… não acho que seja uma boa ideia.", True, 'black')
+dialogo_passaro27 = font.render(f"Mas também não vou te impedir.", True, 'black')
+dialogo_passaro28 = font.render(f"Então, sim, eu tenho uma das chaves.", True, 'black')
+dialogo_passaro29 = font.render(f"A outra está com o peixe, no lago.", True, 'black')
+dialogo_passaro30 = font.render(f"Se você quer mesmo sua estrela de volta,", True, 'black')
+dialogo_passaro31 = font.render(f"vai ter que falar com ele também.", True, 'black')
+dialogo_passaro32 = font.render(f"Mas não vou entregar a minha chave assim tão fácil!", True, 'black')
+dialogo_passaro33 = font.render(f"Que tal uma batalha?", True, 'black')
+dialogo_passaro34 = font.render(f"Nada pessoal, só por diversão.", True, 'black')
+dialogo_passaro35 = font.render(f"Se vencer, a chave é sua!", True, 'black')
+dialogo_passaro36 = font.render(f"Aceita?", True, 'black')
+
+#DIÁLOGO PEIXE
 font = pygame.font.Font(None, 30) 
-dialogo_peixe1 = font.render(f"…Uma estrela?", True, 'black')
-dialogo_peixe2 = font.render(f"Não… não a vi", True, 'black')
-dialogo_peixe3 = font.render(f"Afinal, como um peixe veria uma estrela debaixo da água?", True, 'black')
-dialogo_peixe4 = font.render(f"Mas se for algo tão precioso assim,", True, 'black')
-dialogo_peixe5 = font.render(f"deve estar onde todas as coisas preciosas acabam indo…", True, 'black')
-dialogo_peixe6 = font.render(f"para a casa do cachorro ao norte da ilha.", True, 'black')
-dialogo_peixe7 = font.render(f"Ele não é nada amigável, pelo menor, não mais.", True, 'black')
-dialogo_peixe8 = font.render(f"Esta chave…é tudo o que me restou dos bons tempos.", True, 'black')
-dialogo_peixe9 = font.render(f"Você a quer, não é? Então fique um pouco comigo.", True, 'black')
-dialogo_peixe10 = font.render(f"Que tal um jogo?", True, 'black')
-dialogo_peixe11 = font.render(f"A chave será sua se aceitar.", True, 'black')
-#dialogo_cao
+#pergunta obrigatoria: Você viu uma Estrela? 
+pergunta1_peixe = font.render(f"  Você viu uma Estrela?", True, 'white')
+#
+dialogo_peixe1 = font.render(f"...", True, 'black')
+dialogo_peixe2 = font.render(f"…Uma estrela?", True, 'black')
+dialogo_peixe3 = font.render(f"Não vi nada assim.", True, 'black')
+dialogo_peixe4 = font.render(f"Aqui no lago, o céu quase não aparece.", True, 'black')
+dialogo_peixe5 = font.render(f"Mas se for algo importante…", True, 'black')
+dialogo_peixe6 = font.render(f"imagino que esteja com o cachorro.", True, 'black')
+dialogo_peixe7 = font.render(f"Ele pega tudo de todo mundo.", True, 'black')
+#pergunta obrigatoria: Ele também pegou algo seu?
+pergunta2_peixe = font.render(f"  Ele também pegou algo seu?", True, 'white')
+#
+dialogo_peixe8 = font.render(f"...", True, 'black')
+dialogo_peixe9 = font.render(f"Pegou, sim.", True, 'black')
+dialogo_peixe10 = font.render(f"Uma moeda antiga.", True, 'black')
+dialogo_peixe11= font.render(f"Ela não valia muito…", True, 'black')
+dialogo_peixe12 = font.render(f"mas era especial para mim.", True, 'black')
+dialogo_peixe13 = font.render(f"Eu a encontrei antes mesmo da ilha mudar.", True, 'black')
+dialogo_peixe14 = font.render(f"Costumava olhar para ela", True, 'black')
+dialogo_peixe15 = font.render(f"quando me sentia sozinho.", True, 'black')
+#pergunta obrigatoria: Você tem a outra chave?
+pergunta3_peixe = font.render(f"  Você tem a outra chave?", True, 'white')
+#
+dialogo_peixe16 = font.render(f"...", True, 'black')
+dialogo_peixe17 = font.render(f"Tenho.", True, 'black')
+dialogo_peixe18 = font.render(f"Não gosto muito de batalhas…", True, 'black')
+dialogo_peixe19 = font.render(f"Mas também não gosto de ficar sozinho o tempo todo.", True, 'black')
+dialogo_peixe20 = font.render(f"Se quiser jogar um pouco comigo…", True, 'black')
+dialogo_peixe21 = font.render(f"posso te entregar a chave.", True, 'black')
+dialogo_peixe22 = font.render(f"talvez o lago fique menos silencioso por um tempo.", True, 'black')
+dialogo_peixe23 = font.render(f"Aceita?", True, 'black')
+
+#DIÁLOGO_CAO
 font = pygame.font.Font(None, 30) 
-dialogo_cao1 = font.render(f"Estrela? Ah, sim, eu que encontrei, agora ela é minha.", True, 'black')
-dialogo_cao2 = font.render(f"Só não sei o que um gatinho assustado está fazendo aqui…", True, 'black')
-dialogo_cao3 = font.render(f"Pensei que os cadeados e os ossos já tivessem deixado bem claro", True, 'black')
-dialogo_cao4 = font.render(f"que este não é um lugar para algo tão minúsculo como você.", True, 'black')
-dialogo_cao5 = font.render(f"Olhe só para você! ", True, 'black')
-dialogo_cao6 = font.render(f"Passeando pela ilha e pegando chaves por uma estrela boba!", True, 'black')
-dialogo_cao7 = font.render(f"Na verdade eu nem gostei dela, achei que era de verdade", True, 'black')
-dialogo_cao8 = font.render(f"mas não passa de um brinquedinho de pelúcia velho.", True, 'black')
-dialogo_cao9 = font.render(f"Não me diga que era de quando você era um filhotinho?", True, 'black')
-dialogo_cao10 = font.render(f"Deve ter um grande valor pra você né?", True, 'black')
-dialogo_cao11 = font.render(f"Agora que sei que é tão importante, vou ficar com ela.", True, 'black')
-dialogo_cao12 = font.render(f"Agora ela é minha, entendeu?", True, 'black')
-dialogo_cao13 = font.render(f"Uh? Você quer batalhar por ela? ", True, 'black')
-dialogo_cao14 = font.render(f"Um gatinho contra um cão?", True, 'black')
-dialogo_cao15 = font.render(f"Hahahahaha", True, 'black')
-dialogo_cao16 = font.render(f"Porque não? Vamos começar?", True, 'black')
+dialogo_cao1 = font.render(f"Então… mais um visitante.", True, 'black')
+dialogo_cao2 = font.render(f"Você chegou longe demais para alguém que não pertence a este lugar.", True,'black')
+#pergunta obrigatoria: Estou procurando por uma estrela
+pergunta1_cao = font.render(" Estou produrando por uma estrela", True, 'white')
+#
+dialogo_cao3 = font.render(f"...", True, 'black')
+dialogo_cao4 = font.render(f"Uma estrela?", True, 'black')
+dialogo_cao5 = font.render(f"Engraçado…", True, 'black')
+dialogo_cao6 = font.render(f"Muitas coisas “pertencem” às pessoas até chegarem nesta ilha.", True, 'black')
+dialogo_cao7 = font.render(f"Aqui, tudo passa por mim.", True, 'black')
+#pergunta obrigatoria: Você pegou a estrela?
+pergunta2_cao = font.render(" Você pegou a estrela?", True, 'white')
+#
+dialogo_cao8 = font.render(f"...", True, 'black')
+dialogo_cao9 = font.render(f"Eu não pego, eu guardo coisas.", True, 'black')
+dialogo_cao10 = font.render(f"Objetos perdidos, abandonados…", True, 'black')
+dialogo_cao11 = font.render(f"ou... mal protegidos.", True, 'black')
+dialogo_cao12 = font.render(f"Se algo chegou até mim, é porque não estava em boas mãos.", True, 'black')
+dialogo_cao13 = font.render(f"Então eu cuido deles.", True, 'black')
+dialogo_cao14 = font.render(f"Na verdade...", True, 'black')
+dialogo_cao15 = font.render(f"Pensei que fosse algo importante.", True, 'black')
+dialogo_cao16 = font.render(f"Brilhava. Chamava atenção.", True, 'black')
+dialogo_cao17 = font.render(f"Mas é só um brinquedo velho, não é?", True, 'black')
+dialogo_cao18 = font.render(f"Não me diga que você tem desde de filhotinho?", True, 'black')
+#pergunta obrigatoria: O verdadeiro valor está no que ela representa
+pergunta3_cao = font.render(" O verdadeiro valor está no que ela representa", True, 'white')
+#
+dialogo_cao19 = font.render(f"...", True, 'black')
+#pergunta obrigatoria: Eu preciso dela para ir embora.
+pergunta4_cao = font.render(" Eu preciso dela para ir embora.", True, 'white')
+#
+dialogo_cao20 = font.render(f"...", True, 'black')
+dialogo_cao21 = font.render(f"Precisa?", True, 'black')
+dialogo_cao22 = font.render(f"Todos precisam de alguma coisa.", True, 'black')
+dialogo_cao23 = font.render(f"Mas poucos têm algo para oferecer em troca.", True, 'black')
+#pergunta obrigatoria: Por que você controla a ilha?
+pergunta5_cao = font.render(" Por que você controla a ilha?", True, 'white')
+#
+dialogo_cao24 = font.render(f"...", True, 'black')
+dialogo_cao25 = font.render(f"Porque alguém precisava fazer isso.", True, 'black')
+dialogo_cao26 = font.render(f"Antes de mim, esta ilha era desorganizada.", True, 'black')
+dialogo_cao27 = font.render(f"Cada um fazia o que queria.", True, 'black')
+dialogo_cao28 = font.render(f"Agora existe regra.", True, 'black')
+dialogo_cao29 = font.render(f"Entrada. Saída. Trocas.", True, 'black')
+#pergunta obrigatoria: Você tirou coisas dos outros também?
+pergunta6_cao = font.render(" Você tirou coisas dos outros também?", True, 'white')
+#
+dialogo_cao30 = font.render(f"...", True, 'black')
+dialogo_cao31 = font.render(f"Eu recolhi o que estava espalhado.", True, 'black')
+dialogo_cao32 = font.render(f"Se eles sentem falta, talvez não soubessem cuidar direito.", True, 'black')
+dialogo_cao33 = font.render(f"Valor exige responsabilidade.", True, 'black')
+#pergunta obrigatoria: Eu vim até aqui, isso não mostra que sou responsavel?
+pergunta7_cao = font.render(" Eu vim aqui, isso não mostra que sou responsável?", True, 'white')
+#
+dialogo_cao34 = font.render(f"...", True, 'black')
+dialogo_cao35 = font.render(f"...", True, 'black')
+dialogo_cao36 = font.render(f"Se você quer mesmo essa estrela…", True, 'black')
+dialogo_cao37 = font.render(f"Vai ter que provar que merece levá-la.", True, 'black')
+dialogo_cao38 = font.render(f"Você pode tentar tomá-la à força, mas duvido que consiga.", True, 'black')
+dialogo_cao39 = font.render(f"Ou pode aceitar minhas regras.", True, 'black')
+dialogo_cao40 = font.render(f"Uma batalha.", True, 'black')
+dialogo_cao41 = font.render(f"Se vencer, a estrela é sua.", True, 'black')
+dialogo_cao42 = font.render(f'E vou devolver tudo que "peguei"', True, 'black')
+dialogo_cao43 = font.render(f'Mas se perder…', True, 'black')
+dialogo_cao44 = font.render(f'vai embora da ilha sem ela. E nada feito.', True, 'black')
+dialogo_cao45 = font.render(f'Aceita?', True, 'black')
+
+#DERROTA
+fala_cao_derrota0 = font.render(f'Cão:', True, 'black')
+fala_cao_derrota1 = font.render(f'Como eu disse.', True, 'black')
+fala_cao_derrota2 = font.render(f'Nem tudo é para qualquer um.', True, 'black')
+
+#VITORIA
+fala_cao_vitoria0 = font.render(f'Cão:', True, 'black')
+fala_cao_vitoria1 = font.render(f'Hmph. Regras são regras. Pegue a estrela.', True, 'black')
+fala_cao_vitoria2 = font.render(f'E saia da ilha antes que eu mude de ideia.', True, 'black')
 
 #CONTROLES (orientação)
 font = pygame.font.Font(None, 25) 
@@ -434,6 +638,9 @@ quadrado_game_over.fill((0, 0, 0))
 #quadrado branco para mostrar a quantidade de itens na loja
 quadrado_itens = pygame.Surface([220, 150])
 quadrado_itens.fill((225, 225, 225))
+#quadrado de perguntas obrigatorias
+quadrado_pergunta = pygame.Surface([560, 40])
+quadrado_pergunta.fill((0, 0, 0))
 
 #FUNÇÕES:
 #função para o reset do mapa e das telas
@@ -724,9 +931,9 @@ while True:
         janela.blit(texto_pontuaçao, (850, 640))
         #CALCULAR OS PONTOS DOS BOSS PELA DIFICULDADE
         if dificuldade == "fácil":
-            pontos_passaro = 10
-            pontos_peixe = 20
-            pontos_cao = 30
+            pontos_passaro = 0
+            pontos_peixe = 0
+            pontos_cao = 0
         elif dificuldade == "médio":
             pontos_passaro = 60
             pontos_peixe = 70
@@ -943,10 +1150,63 @@ while True:
             primeiro_dialogo1, primeiro_dialogo2, primeiro_dialogo3,
             primeiro_dialogo4, primeiro_dialogo5, primeiro_dialogo6,
             primeiro_dialogo7, primeiro_dialogo8, primeiro_dialogo9,
-            primeiro_dialogo10, primeiro_dialogo11
+            primeiro_dialogo10, primeiro_dialogo11, primeiro_dialogo12, 
+            primeiro_dialogo13, primeiro_dialogo14, primeiro_dialogo15,
+            primeiro_dialogo16, primeiro_dialogo17, primeiro_dialogo18,
+            primeiro_dialogo19, primeiro_dialogo20, primeiro_dialogo21,
+            primeiro_dialogo22, primeiro_dialogo23, primeiro_dialogo24,
+            primeiro_dialogo25, primeiro_dialogo26, primeiro_dialogo27,
+            primeiro_dialogo28, primeiro_dialogo29, primeiro_dialogo30,
+            primeiro_dialogo31, primeiro_dialogo32, primeiro_dialogo33,
+            primeiro_dialogo34, primeiro_dialogo35, primeiro_dialogo36,
+            primeiro_dialogo37, primeiro_dialogo38, primeiro_dialogo39,
+            primeiro_dialogo40, primeiro_dialogo41, primeiro_dialogo42,
+            primeiro_dialogo43, primeiro_dialogo44, primeiro_dialogo45,
+            primeiro_dialogo46, primeiro_dialogo47, primeiro_dialogo48,
+            primeiro_dialogo49, primeiro_dialogo50, primeiro_dialogo51,
+            primeiro_dialogo52, primeiro_dialogo53, primeiro_dialogo54,
+            primeiro_dialogo55, primeiro_dialogo56, primeiro_dialogo57,
+            primeiro_dialogo58, primeiro_dialogo59, primeiro_dialogo60,
+            primeiro_dialogo61, primeiro_dialogo62, primeiro_dialogo63,
+            primeiro_dialogo64, primeiro_dialogo65, primeiro_dialogo66,
+            primeiro_dialogo67, primeiro_dialogo68, primeiro_dialogo69,
+            primeiro_dialogo70, primeiro_dialogo71, primeiro_dialogo72
         ]
         
         if pular == 0: #se pular não for preencionado vai imprimir os textos
+            if passar == 2:
+                print('Pergunta1')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta1_gato, (10, 600))
+            elif passar == 4:
+                print('pergunta2')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta2_gato, (10, 600))
+            elif passar == 21:
+                print('pergunta3')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta3_gato, (10, 600))
+            elif passar == 25:
+                print('pergunta4')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta4_gato, (10, 600))
+            elif passar == 44:
+                print('pergunta5')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta5_gato, (10, 600))
+            elif passar == 52:
+                print('pergunta6')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta6_gato, (10, 600))
+            elif passar == 58:
+                print('pergunta7')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta7_gato, (10, 600))
+            elif passar == 67:
+                print('pergunta8')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta8_gato, (10, 600))
+
             if passar < len(textos):
                 janela.blit(textos[passar], (200, 650))
         if passar >= len(textos) or pular == 1: #se pular for preencionado
@@ -967,10 +1227,30 @@ while True:
             dialogo_passaro4, dialogo_passaro5, dialogo_passaro6,
             dialogo_passaro7, dialogo_passaro8, dialogo_passaro9,
             dialogo_passaro10, dialogo_passaro11, dialogo_passaro12,
-            dialogo_passaro13
+            dialogo_passaro13, dialogo_passaro14, dialogo_passaro15, 
+            dialogo_passaro16, dialogo_passaro17, dialogo_passaro18, 
+            dialogo_passaro19, dialogo_passaro20, dialogo_passaro21,
+            dialogo_passaro22, dialogo_passaro23, dialogo_passaro24,
+            dialogo_passaro25, dialogo_passaro26, dialogo_passaro27,
+            dialogo_passaro28, dialogo_passaro29, dialogo_passaro30,
+            dialogo_passaro31, dialogo_passaro32, dialogo_passaro33,
+            dialogo_passaro34, dialogo_passaro35, dialogo_passaro36
         ]
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
+            if passar == 0:
+                print('Pergunta1')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta1_passaro, (10, 600))
+            elif passar == 10:
+                print('pergunta2')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta2_passaro, (10, 600))
+            elif passar == 21:
+                print('pergunta3')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta3_passaro, (10, 600))
+
             if passar < len(textos):
                 janela.blit(textos[passar], (200, 650))
         if passar >= len(textos) or pular == 1: #se pular for preencionado vai direto pro menu
@@ -1075,10 +1355,27 @@ while True:
             dialogo_peixe1, dialogo_peixe2, dialogo_peixe3,
             dialogo_peixe4, dialogo_peixe5, dialogo_peixe6,
             dialogo_peixe7, dialogo_peixe8, dialogo_peixe9,
-            dialogo_peixe10, dialogo_peixe11
+            dialogo_peixe10, dialogo_peixe11, dialogo_peixe12,
+            dialogo_peixe13, dialogo_peixe14, dialogo_peixe15,
+            dialogo_peixe16, dialogo_peixe17, dialogo_peixe18,
+            dialogo_peixe19, dialogo_peixe20, dialogo_peixe21,
+            dialogo_peixe22, dialogo_peixe23
         ]
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
+            if passar == 0:
+                print('Pergunta1')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta1_peixe, (10, 600))
+            elif passar == 7:
+                print('pergunta2')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta2_peixe, (10, 600))
+            elif passar == 15:
+                print('pergunta3')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta3_peixe, (10, 600))
+
             if passar < len(textos):
                 janela.blit(textos[passar], (200, 650))
         if passar >= len(textos) or pular == 1: #se pular for preencionado vai direto pro menu
@@ -1184,10 +1481,47 @@ while True:
             dialogo_cao1, dialogo_cao2, dialogo_cao3, dialogo_cao4,
             dialogo_cao5, dialogo_cao6, dialogo_cao7, dialogo_cao8,
             dialogo_cao9, dialogo_cao10, dialogo_cao11, dialogo_cao12,
-            dialogo_cao13, dialogo_cao14, dialogo_cao15, dialogo_cao16
+            dialogo_cao13, dialogo_cao14, dialogo_cao15, dialogo_cao16, 
+            dialogo_cao17, dialogo_cao18, dialogo_cao19, dialogo_cao20,
+            dialogo_cao21, dialogo_cao22, dialogo_cao23, dialogo_cao24,
+            dialogo_cao25, dialogo_cao26, dialogo_cao27, dialogo_cao28,
+            dialogo_cao29, dialogo_cao30, dialogo_cao31, dialogo_cao32,
+            dialogo_cao33, dialogo_cao34, dialogo_cao35, dialogo_cao36,
+            dialogo_cao37, dialogo_cao38, dialogo_cao39, dialogo_cao40,
+            dialogo_cao41, dialogo_cao42, dialogo_cao43, dialogo_cao44,
+            dialogo_cao45
         ]
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
+            if passar == 2:
+                print('Pergunta1')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta1_cao, (10, 600))
+            elif passar == 7:
+                print('pergunta2')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta2_cao, (10, 600))
+            elif passar == 18:
+                print('pergunta3')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta3_cao, (10, 600))
+            elif passar == 19:
+                print('Pergunta4')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta4_cao, (10, 600))
+            elif passar == 23:
+                print('Pergunta5')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta5_cao, (10, 600))
+            elif passar == 29:
+                print('Pergunta6')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta6_cao, (10, 600))
+            elif passar == 33:
+                print('Pergunta6')
+                janela.blit(quadrado_pergunta, (10, 590))
+                janela.blit(pergunta7_cao, (10, 600))
+            
             if passar < len(textos):
                 janela.blit(textos[passar], (200, 650))
         if passar >= len(textos) or pular == 1: #se pular for preencionado vai direto pro menu
@@ -1310,10 +1644,10 @@ while True:
         janela.blit(loja, (0, 0))
 
         #texto
-        janela.blit(quadrado_dialogo, (0, 638)) #quadrado branco de fundo de dialogo
         janela.blit(quadrado_status, (0, 530)) #quadrado branco de fundo dos status
         janela.blit(quadrado_itens, (0, 80)) #quadrado branco de fundo das quantia de itens
-        janela.blit(dialogo_loja, (200, 650))
+        janela.blit(dialogo_loja1, (500, 600))
+        janela.blit(dialogo_loja2, (500, 630))
         janela.blit(voltar_ao_mapa, (800, 20))
 
         #informações de quantidade dos itens
