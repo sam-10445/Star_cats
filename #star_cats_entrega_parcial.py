@@ -197,7 +197,7 @@ cao_batalha = cao_batalha.convert()
 cao_batalha = pygame.transform.scale(cao_batalha, (1000, 700))
 
 #loja
-loja = pygame.image.load('imagens/loja.png')
+loja = pygame.image.load('imagens/loja.jpg')
 loja = loja.convert()
 loja = pygame.transform.scale(loja, (1000, 700))
 
@@ -569,9 +569,10 @@ dialogo_cao44 = font.render(f'vai embora da ilha sem ela. E nada feito.', True, 
 dialogo_cao45 = font.render(f'Aceita?', True, 'black')
 
 #DERROTA
-fala_cao_derrota0 = font.render(f'Cão:', True, 'white')
-fala_cao_derrota1 = font.render(f'Como eu disse.', True, 'white')
-fala_cao_derrota2 = font.render(f'Nem tudo é para qualquer um.', True, 'white')
+font_derrota = pygame.font.Font(None, 30) 
+fala_cao_derrota0 = font_derrota.render(f'Cão:', True, 'white')
+fala_cao_derrota1 = font_derrota.render(f'Como eu disse.', True, 'white')
+fala_cao_derrota2 = font_derrota.render(f'Nem tudo é para qualquer um.', True, 'white')
 
 #VITORIA
 font_vitoria = pygame.font.Font(None, 25) 
@@ -650,7 +651,7 @@ quadrado_itens.fill((225, 225, 225))
 quadrado_pergunta = pygame.Surface([560, 40])
 quadrado_pergunta.fill((0, 0, 0))
 #quadrado de fala cão derrota
-quadrado_derrota = pygame.Surface([400, 100])
+quadrado_derrota = pygame.Surface([405, 95])
 quadrado_derrota.fill((0, 0, 0))
 #quadrado de fala cão vitoria
 quadrado_vitoria = pygame.Surface([400, 100])
@@ -706,7 +707,7 @@ def reset_status():
     chaves = 0
     vidas = 1
     dinheiro = 300
-    tarefa = 1
+    tarefa = 2
     nota = 0
     n_biscoito_peixe = 0
     n_sardinha = 0
@@ -839,15 +840,6 @@ while True:
                 if event.key == pygame.K_n:
                     nao = nao + 1
 
-            #DEPOIS DE PERDER UMA BATALHA (passaro ou peixe)
-            '''if event.key == pygame.K_z:
-                if abrir_tela_game_over == True:
-                    reset_telas()
-                    if vidas <= 0:
-                        abrir_tela_de_derrota = True
-                    else:
-                        tela_mapa = True'''
-
         #CONTROLE DO SENSOR DE CLIQUE NOS QUADRADOS DAS CASAS
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1 and tela_mapa:
@@ -871,19 +863,6 @@ while True:
                     if tarefa >= 2:
                         reset_telas()
                         tela_loja = True
-                #desnecessario?
-                '''elif quadrado_1.collidepoint(event.pos):
-                    reset_telas()
-                    tela_boss_1 = True
-                elif quadrado_2.collidepoint(event.pos):
-                    reset_telas()
-                    tela_boss_2 = True
-                elif quadrado_3.collidepoint(event.pos):
-                    reset_telas()
-                    tela_boss_3 = True
-                elif quadrado_4.collidepoint(event.pos):
-                    reset_telas()
-                    tela_loja = True'''
 
             #SENSOR DOS CLIQUES NOS ITENS DA LOJA
             elif tela_loja:
@@ -893,26 +872,23 @@ while True:
                         n_biscoito_peixe += 1
                         dinheiro -= 150
                         vidas += 1
-                        print("Comprou biscoito de peixe")
 
                 elif retangulo_sardinha_0.collidepoint(event.pos):
                     if dinheiro >= 150:
                         n_sardinha += 1
                         dinheiro -= 150
                         if chaves == 0: #batalha passaro
-                            pontos_black1 += 10
+                            pontos_black1 += 20
                         elif chaves == 1: #batalha peixe
-                            pontos_black2 +=  10
+                            pontos_black2 +=  20
                         elif chaves == 2: #batalha cao
-                            pontos_black3 += 10
-                        print("Comprou sardinha")
+                            pontos_black3 += 20
 
                 elif retangulo_leite_0.collidepoint(event.pos):
                     if dinheiro >= 300 and n_leite == 0:
                         dinheiro -= 300
                         bonus_tempo = 20   # bônus reservado para a próxima batalha
                         n_leite = 1        # só pode comprar uma vez
-                        print(f"Tempo: {bonus_tempo}")
 
             #CONTROLE DOS CLIQUES NOS QUADRADOS DAS BATALHAS
             if event.button == 1:
@@ -952,17 +928,17 @@ while True:
         janela.blit(texto_pontuaçao, (850, 640))
         #CALCULAR OS PONTOS DOS BOSS PELA DIFICULDADE
         if dificuldade == "fácil":
-            pontos_passaro = 50
-            pontos_peixe = 50
-            pontos_cao = 50
+            pontos_passaro = 60
+            pontos_peixe = 70
+            pontos_cao = 80
         elif dificuldade == "médio":
-            pontos_passaro = 70
+            pontos_passaro = 80
             pontos_peixe = 90
-            pontos_cao = 110
+            pontos_cao = 120
         elif dificuldade == "difícil":
-            pontos_passaro = 130
-            pontos_peixe = 150
-            pontos_cao = 170
+            pontos_passaro = 100
+            pontos_peixe = 110
+            pontos_cao = 110
 
         ##INFORMAÇÕES:
         font_pontuacao = pygame.font.Font(None, 45) 
@@ -1205,35 +1181,27 @@ while True:
         
         if pular == 0: #se pular não for preencionado vai imprimir os textos
             if passar == 2:
-                print('Pergunta1')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta1_gato, (10, 600))
             elif passar == 4:
-                print('pergunta2')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta2_gato, (10, 600))
             elif passar == 21:
-                print('pergunta3')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta3_gato, (10, 600))
             elif passar == 25:
-                print('pergunta4')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta4_gato, (10, 600))
             elif passar == 44:
-                print('pergunta5')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta5_gato, (10, 600))
             elif passar == 52:
-                print('pergunta6')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta6_gato, (10, 600))
             elif passar == 58:
-                print('pergunta7')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta7_gato, (10, 600))
             elif passar == 67:
-                print('pergunta8')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta8_gato, (10, 600))
 
@@ -1269,15 +1237,12 @@ while True:
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
             if passar == 0:
-                print('Pergunta1')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta1_passaro, (10, 600))
             elif passar == 10:
-                print('pergunta2')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta2_passaro, (10, 600))
             elif passar == 21:
-                print('pergunta3')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta3_passaro, (10, 600))
 
@@ -1353,7 +1318,6 @@ while True:
                 if tempo_restante <= 0: 
                     #TEMPO ACABOU
                     DURACAO_BATALHA = TEMPO_BASE_BATALHA
-                    print("Acabou o tempo")
                     batalha_ativa = False
                     abrir_tela_pontuacao = True
                     #calcular a nota
@@ -1394,15 +1358,12 @@ while True:
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
             if passar == 0:
-                print('Pergunta1')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta1_peixe, (10, 600))
             elif passar == 7:
-                print('pergunta2')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta2_peixe, (10, 600))
             elif passar == 15:
-                print('pergunta3')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta3_peixe, (10, 600))
 
@@ -1478,7 +1439,6 @@ while True:
                 if tempo_restante <= 0: 
                     #TEMPO ACABOU
                     DURACAO_BATALHA = TEMPO_BASE_BATALHA
-                    print("Acabou o tempo")
                     batalha_ativa = False
                     abrir_tela_pontuacao = True
                     #calcular a nota
@@ -1524,31 +1484,24 @@ while True:
 
         if pular == 0: #se pular não for preencionado vai imprimir os textos
             if passar == 2:
-                print('Pergunta1')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta1_cao, (10, 600))
             elif passar == 7:
-                print('pergunta2')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta2_cao, (10, 600))
             elif passar == 18:
-                print('pergunta3')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta3_cao, (10, 600))
             elif passar == 19:
-                print('Pergunta4')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta4_cao, (10, 600))
             elif passar == 23:
-                print('Pergunta5')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta5_cao, (10, 600))
             elif passar == 29:
-                print('Pergunta6')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta6_cao, (10, 600))
             elif passar == 33:
-                print('Pergunta6')
                 janela.blit(quadrado_pergunta, (10, 590))
                 janela.blit(pergunta7_cao, (10, 600))
             
@@ -1623,7 +1576,6 @@ while True:
                 if tempo_restante <= 0: 
                     #TEMPO ACABOU
                     DURACAO_BATALHA = TEMPO_BASE_BATALHA
-                    print("Acabou o tempo")
                     batalha_ativa = False
                     abrir_tela_pontuacao = True
                     #calcular a nota

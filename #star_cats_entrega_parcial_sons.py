@@ -2,6 +2,7 @@ import pygame
 import sys, random
 import pygame as pg
 pygame.init()
+pygame.mixer.init()
 pygame.display.set_caption("Star Cats")
 janela = pygame.display.set_mode((1000, 700))
 clock = pygame.time.Clock()
@@ -35,6 +36,60 @@ abrir_tela_pontuacao = False
 abrir_tela_game_over = False
 
 abrir_tela_creditos = False
+
+#SONS
+#menu e tela dificuldade
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#cena inicial
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#mapa
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#loja
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#batalha
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#tela chaves
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#tela de vitoria
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+#creditos
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+
+
+
+
 
 #controle de passagem de diálogos
 passar = 0
@@ -952,9 +1007,9 @@ while True:
         janela.blit(texto_pontuaçao, (850, 640))
         #CALCULAR OS PONTOS DOS BOSS PELA DIFICULDADE
         if dificuldade == "fácil":
-            pontos_passaro = 50
-            pontos_peixe = 50
-            pontos_cao = 50
+            pontos_passaro = 0
+            pontos_peixe = 0
+            pontos_cao = 0
         elif dificuldade == "médio":
             pontos_passaro = 70
             pontos_peixe = 90
@@ -1094,6 +1149,9 @@ while True:
     # MENU 
     elif tela_dificuldade or not tela_sena_inicial:
         janela.blit(menu, (0, 0))
+        #musica_fundo.play()
+
+ 
 
     #MENU DE DIFICULDADE
     if tela_dificuldade:
