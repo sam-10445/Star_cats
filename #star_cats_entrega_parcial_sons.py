@@ -93,10 +93,6 @@ pygame.mixer.music.play(-1)
 
 musica_creditos= pygame.mixer.Sound("audios/audio teste.mp3")
 
-
-
-
-
 #controle de passagem de diálogos
 passar = 0
 pular = 0
