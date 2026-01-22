@@ -24,7 +24,15 @@ tela_loja=False
 tela_boss_1=False
 tela_boss_2=False
 tela_boss_3=False
-
+musica_menu_e_dificuldade= True
+musica_primeira_cena= False
+musica_mapas= False
+musica_lojas= False
+musica_boss= False
+musica_chave=False
+musica_vitorias=False
+musica_derrotas=False
+musica_creditoss=False
 #controle do botão de enter
 passou_do_menu_dificuldade = False
 
