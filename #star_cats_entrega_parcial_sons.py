@@ -43,49 +43,55 @@ pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_menu_dificuldade= pygame.mixer.Sound("audios/audio teste.mp3")
 #cena inicial
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_cena_inicial= pygame.mixer.Sound("audios/audio teste.mp3")
 #mapa
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_mapa= pygame.mixer.Sound("audios/audio teste.mp3")
 #loja
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_loja= pygame.mixer.Sound("audios/audio teste.mp3")
 #batalha
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_batalha= pygame.mixer.Sound("audios/audio teste.mp3")
 #tela chaves
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_chave= pygame.mixer.Sound("audios/audio teste.mp3")
 #tela de vitoria
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_vitoria= pygame.mixer.Sound("audios/audio teste.mp3")
+#derrota
+pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
+musica_vitoria= pygame.mixer.Sound("audios/audio teste.mp3")
 #creditos
 pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_fundo= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_creditos= pygame.mixer.Sound("audios/audio teste.mp3")
 
 
 
