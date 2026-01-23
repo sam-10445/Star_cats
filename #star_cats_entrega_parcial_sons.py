@@ -47,13 +47,13 @@ abrir_tela_creditos = False
 
 #SONS
 #menu e tela dificuldade
-pygame.mixer.music.load("audios/audio teste.mp3")
+pygame.mixer.music.load("audios\WhatsApp Audio 2026-01-22 at 15.08.20.mpeg")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_menu_dificuldade= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_menu_dificuldade= pygame.mixer.Sound("audios\WhatsApp Audio 2026-01-22 at 15.08.20.mpeg")
 #cena inicial
-pygame.mixer.music.load("audios/audio teste.mp3")
+'''pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
@@ -99,7 +99,7 @@ pygame.mixer.music.load("audios/audio teste.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)
 
-musica_creditos= pygame.mixer.Sound("audios/audio teste.mp3")
+musica_creditos= pygame.mixer.Sound("audios/audio teste.mp3")'''
 
 #controle de passagem de diálogos
 passar = 0
@@ -262,7 +262,7 @@ cao_batalha = cao_batalha.convert()
 cao_batalha = pygame.transform.scale(cao_batalha, (1000, 700))
 
 #loja
-loja = pygame.image.load('imagens/loja.png')
+loja = pygame.image.load('imagens/loja.jpg')
 loja = loja.convert()
 loja = pygame.transform.scale(loja, (1000, 700))
 
@@ -853,6 +853,7 @@ while True:
 
             #ENTER do menu de dificuldade -> cena inicia (geral)
             if event.key == pygame.K_RETURN: 
+                
                 #ENTER -> menu de dificuldade
                 if passou_do_menu_dificuldade == False:
                     if tela_dificuldade == False and tela_sena_inicial == False:
