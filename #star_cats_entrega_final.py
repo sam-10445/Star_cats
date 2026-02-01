@@ -504,7 +504,7 @@ font = pygame.font.Font(None, 30)
 dialogo_cao1 = font.render(f"Então… mais um visitante.", True, 'black')
 dialogo_cao2 = font.render(f"Você chegou longe demais para alguém que não pertence a este lugar.", True,'black')
 #pergunta obrigatoria: Estou procurando por uma estrela
-pergunta1_cao = font.render(" Estou produrando por uma estrela", True, 'white')
+pergunta1_cao = font.render(" Estou procurando por uma estrela", True, 'white')
 #
 dialogo_cao3 = font.render(f"...", True, 'black')
 dialogo_cao4 = font.render(f"Uma estrela?", True, 'black')
